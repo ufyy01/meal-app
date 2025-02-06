@@ -3,6 +3,7 @@ import { useFetchData } from "@/hooks/useFetch";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
 import MealDisplay from "./mealDisplay";
+import Loader from "./loader";
 
 interface Data {
 	categories: {
@@ -55,7 +56,7 @@ const CategoryBar = () => {
 		<div className="py-2">
 			<div>
 				{error && <div>{error}</div>}
-				{isPending && <div>Loading...</div>}
+				{isPending && <Loader />}
 				{data && (
 					<div>
 						<div

@@ -2,6 +2,7 @@
 import React from "react";
 import MealCard from "./mealCard";
 import { useFetchData } from "@/hooks/useFetch";
+import Loader from "./loader";
 
 export interface Meal {
 	strMeal: string;
@@ -14,12 +15,13 @@ interface MealList {
 }
 
 const MealDisplay = ({ category }: { category: string }) => {
-	const { data, error } = useFetchData<MealList>(
+	const { data, error, isPending } = useFetchData<MealList>(
 		`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
 	);
 	return (
 		<div className="mt-4 overflow-hidden ms-2">
 			{error && <div>{error}</div>}
+			{isPending && <Loader />}
 			{data && (
 				<div className="d-flex flex-wrap gap-2">
 					{data.meals.map((meal) => (

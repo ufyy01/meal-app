@@ -19,7 +19,7 @@ const Navigationbar = () => {
 	return (
 		<>
 			<Navbar expand="lg" className="py-1 shadow-sm">
-				<Container fluid="lg">
+				<Container fluid className="px-4">
 					<Navbar.Brand href="#home" className="text-danger">
 						Pizza Jungle
 					</Navbar.Brand>
