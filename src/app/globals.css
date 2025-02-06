@@ -1,42 +1,132 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--background: #ffffff;
+	--foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+	}
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+	max-width: 100vw;
+	overflow-x: hidden;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	color: var(--foreground);
+	background: var(--background);
+	font-family: Arial, Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+	html {
+		color-scheme: dark;
+	}
+}
+
+.navbar-nav a {
+	color: var(--foreground);
+	padding: 0;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+.hide-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	overflow-x: scroll;
+	cursor: grab;
+}
+
+.hide-scrollbar.active {
+	cursor: grabbing;
+	user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+.image-filter {
+	filter: grayscale(50);
+}
+
+.card {
+	flex: 1 1 calc(25% - 1rem);
+	max-width: calc(25% - 1rem);
+	border: none;
+	height: 22rem;
+	/* max-height: 27rem; */
+}
+.cartBtn {
+	width: 50%;
+}
+
+.cartPos {
+	right: -120%;
+	width: 100%;
+}
+
+@media (max-width: 991.98px) {
+	.card {
+		flex: 1 1 calc(33.33% - 1rem);
+		max-width: calc(33.33% - 1rem);
+	}
+	.cartBtn {
+		width: 60%;
+	}
+	.cartPos {
+		right: 0;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.card {
+		flex: 1 1 calc(50% - 1rem);
+		max-width: calc(50% - 1rem);
+	}
+}
+
+@media (max-width: 575.98px) {
+	.card {
+		flex: 1 1 100%;
+		max-width: 100%;
+	}
+	.cartBtn {
+		width: 100%;
+	}
+	.cartPos {
+		right: 0;
+	}
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.clamp3Lines {
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
