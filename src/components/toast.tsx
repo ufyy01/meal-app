@@ -6,7 +6,7 @@ function ToastPop() {
 		<ToastContainer
 			className="p-3"
 			position="bottom-end"
-			style={{ zIndex: 2000 }}>
+			style={{ zIndex: 2000, position: "fixed", bottom: 0 }}>
 			<Toast>
 				<Toast.Body className="fs-6 text-center text-black">
 					<Icon
