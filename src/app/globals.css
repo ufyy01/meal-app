@@ -74,7 +74,7 @@ a {
 	flex: 1 1 calc(25% - 1rem);
 	max-width: calc(25% - 1rem);
 	border: none;
-	height: 22rem;
+	height: 370px;
 	/* max-height: 27rem; */
 }
 .cartBtn {
